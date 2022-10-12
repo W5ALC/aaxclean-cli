@@ -1,0 +1,5 @@
+#!/bin/bash
+for i in $(ls *.aaxc  | sed 's/.aaxc//')
+do
+aaxclean-cli -f $i\.\a\a\x\c --audible_key $(jq -r '.content_license.license_response.key' $i\.\v\o\u\c\h\e\r | column -t) --audible_iv $(jq -r '.content_license.license_response.iv' $i\.\v\o\u\c\h\e\r | column -t) -o ~/Audiobook/$i\.\m\4\b
+done
